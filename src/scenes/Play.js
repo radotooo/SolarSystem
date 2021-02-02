@@ -16,28 +16,23 @@ export default class Play extends Scene {
     footer.x = -window.innerWidth / 2;
     footer.y = window.innerHeight / 2 - footer.height;
     // this.addChild(footer);
+    const rocket = new Rocket();
+    // this.addChild(rocket);
 
     const earth = new Earth();
+    earth.addChild(rocket);
     this.addChild(earth);
 
     const stars = new Stars();
     this.addChild(stars);
-
-    const rocket = new Rocket();
-    this.addChild(rocket);
 
     const sun = new Sun();
     sun.x = 400;
     sun.y = -500;
 
     this.addChild(sun);
-    // const filter = new Filter(sun._blast);
-    // this.filters = [new Filter.DisplacementFilter(sun._blast, 200)];
-    // sun.mas;
-    // this.parent.parent.filters = [new filters.NoiseFilter()];
-    // console.log(this);
 
-    // this.filters.push(filter);
+    this.parent.parent.filters = [new filters.DisplacementFilter(sun._blast)];
 
     // viewpoer inside of the  scene must have a filter appkied whisch uses the _blast from the sun
   }
