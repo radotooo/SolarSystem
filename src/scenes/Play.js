@@ -15,14 +15,12 @@ export default class Play extends Scene {
     const footer = new Footer();
     footer.x = -window.innerWidth / 2;
     footer.y = window.innerHeight / 2 - footer.height;
-    // this.addChild(footer);
+
     const rocket = new Rocket();
-    // this.addChild(rocket);
 
     const earth = new Earth();
     earth.addChild(rocket);
     this.addChild(earth);
-
     const stars = new Stars();
     this.addChild(stars);
 

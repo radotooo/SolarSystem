@@ -6,15 +6,15 @@ export default class Rocket extends Container {
   constructor() {
     super();
 
+    this.name = 'rocket';
     this.x = -550;
     this.y = 100;
     this.pivot.set(-350, 0);
 
     this._body = new Sprite.from('rocket');
-    this._body.name = 'rocket';
 
     this._fire = new Container();
-    // this._addFire();
+    this._addFire();
 
     this.addChild(this._body);
     this.addChild(this._fire);
@@ -25,17 +25,16 @@ export default class Rocket extends Container {
   /**
    * @private
    */
-  _createRocket() {
-    this._body.name = 'rocket';
-    this.x = -550;
-    this.y = 100;
-  }
-
-  /**
-   * @private
-   */
   _addFire() {
     const fire = new Fire();
+    fire.pivot.set(-350, 0);
+
+    fire.x = 40;
+    fire.y = 365;
+    fire.scale.x = 0.4;
+    fire.scale.y = 0.2;
+    fire.angle = 270;
+
     this._fire.addChild(fire);
   }
 
