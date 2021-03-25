@@ -1,7 +1,6 @@
-import { Sprite, filters, Filter } from 'pixi.js';
+import { filters } from 'pixi.js';
 
 import Scene from './Scene';
-import gsap from 'gsap';
 import Footer from '../components/Footer';
 import Earth from '../components/Earth';
 import Stars from '../components/Stars';
@@ -17,18 +16,15 @@ export default class Play extends Scene {
     footer.y = window.innerHeight / 2 - footer.height;
 
     const rocket = new Rocket();
-
     const earth = new Earth();
-    earth.addChild(rocket);
-    this.addChild(earth);
     const stars = new Stars();
-    this.addChild(stars);
 
     const sun = new Sun();
     sun.x = 400;
     sun.y = -500;
 
-    this.addChild(sun);
+    earth.addChild(rocket);
+    this.addChild(stars, earth, sun);
 
     this.parent.parent.filters = [new filters.DisplacementFilter(sun._blast)];
 

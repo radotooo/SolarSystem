@@ -1,5 +1,10 @@
 import { Container, Sprite } from 'pixi.js';
 
+/**
+ * Initializes a new instance of Earth
+ * @class
+ * @extends {PIXI.Container}
+ */
 export default class Earth extends Container {
   constructor() {
     super();

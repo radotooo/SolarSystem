@@ -2,6 +2,11 @@ import { Container, Sprite } from 'pixi.js';
 import Fire from './Fire';
 import gsap from 'gsap';
 
+/**
+ * Initializes a new instance of Rocket
+ * @class
+ * @extends {PIXI.Container}
+ */
 export default class Rocket extends Container {
   constructor() {
     super();
@@ -12,13 +17,10 @@ export default class Rocket extends Container {
     this.pivot.set(-350, 0);
 
     this._body = new Sprite.from('rocket');
-
     this._fire = new Container();
+
     this._addFire();
-
-    this.addChild(this._body);
-    this.addChild(this._fire);
-
+    this.addChild(this._body, this._fire);
     this._rotate();
   }
 
@@ -27,8 +29,8 @@ export default class Rocket extends Container {
    */
   _addFire() {
     const fire = new Fire();
-    fire.pivot.set(-350, 0);
 
+    fire.pivot.set(-350, 0);
     fire.x = 40;
     fire.y = 365;
     fire.scale.x = 0.4;

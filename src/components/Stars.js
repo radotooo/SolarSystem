@@ -2,6 +2,11 @@ import { Container, Sprite } from 'pixi.js';
 import { random } from '../core/utils';
 import gsap from 'gsap';
 
+/**
+ * Initializes a new instance of Stars
+ * @class
+ * @extends {PIXI.Container}
+ */
 export default class Stars extends Container {
   constructor() {
     super();

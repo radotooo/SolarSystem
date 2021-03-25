@@ -1,6 +1,11 @@
 import { BLEND_MODES, Container, Sprite } from 'pixi.js';
 import gsap from 'gsap';
 
+/**
+ * Initializes a new instance of Sun
+ * @class
+ * @extends {PIXI.Container}
+ */
 export default class Sun extends Container {
   constructor() {
     super();
@@ -46,9 +51,6 @@ export default class Sun extends Container {
 
     this._blast.alpha = 0;
 
-    this.addChild(sun);
-    this.addChild(this._glowBottom);
-    this.addChild(this._glowTop);
-    this.addChild(this._blast);
+    this.addChild(sun, this._glowBottom, this._glowTop, this._blast);
   }
 }

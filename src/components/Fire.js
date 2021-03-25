@@ -1,11 +1,4 @@
-import {
-  Container,
-  Spritesheet,
-  Texture,
-  AnimatedSprite,
-  BLEND_MODES,
-} from 'pixi.js';
-import data from '../static/fire.json';
+import { Container, AnimatedSprite, BLEND_MODES } from 'pixi.js';
 import Assets from '../core/AssetManager';
 
 export default class Fire extends Container {

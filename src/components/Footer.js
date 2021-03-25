@@ -5,7 +5,7 @@ export default class Footer extends Container {
   constructor() {
     super();
 
-           this.name = 'footer';
+    this.name = 'footer';
 
     this._addBg();
     this._addHighlight();
@@ -51,6 +51,6 @@ export default class Footer extends Container {
     logo.interactive = true;
     logo.buttonMode = true;
 
-    logo.on('pointerdown', () => window.location = 'https://www.booost.bg/');
+    logo.on('pointerdown', () => (window.location = 'https://www.booost.bg/'));
   }
 }
